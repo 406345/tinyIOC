@@ -23,6 +23,7 @@ public class ClassA {
 }
 
 // Inject a instance.
+@AutoManage
 public class ClassB {
     // using like springboot
     @AutoInject

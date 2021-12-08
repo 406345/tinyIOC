@@ -9,8 +9,9 @@ public class Main {
     static IOCManager iocManager = new IOCManager();
 
     public static void main(String[] args) {
-        // scan the packages
+        // scan the package
         iocManager.load("com.demo.tinyioc");
+        iocManager.load("com.demo.tinyioc.xxxx");
     }
 }
 
@@ -22,8 +23,9 @@ public class ClassA {
     ...
 }
 
-// Inject a instance.
-@AutoManage
+// use an instance in the container.
+
+@AutoManage //  ClassB MUST be managed by container, so that the ClassA can be injected.
 public class ClassB {
     // using like springboot
     @AutoInject
@@ -33,4 +35,4 @@ public class ClassB {
 ```
 
 # By the author
-This is a  realy realy simple ioc framework,using in a lite system. It may not be a nice choise using in a Complex system.
+This is a  realy realy simple ioc framework,using in a lite system. It may not be a nice choise using in a complex system.
